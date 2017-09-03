@@ -25,15 +25,17 @@ namespace Elections
         public void close_con()
         {
             con.Close();
-            adt.Dispose();
+            
         }
 
         public void exec_query(String query)
         {
             cmd = new SqlCommand(query, con);
             //cmd.Connection = con;
+            //cmd.Connection.Open();
             cmd.ExecuteNonQuery();
             cmd.Dispose();
+            con.Close();
         }
 
         public DataSet data_access(String query)
@@ -41,6 +43,7 @@ namespace Elections
             adt = new SqlDataAdapter(query, con);
             DataSet ds = new DataSet();
             adt.Fill(ds);
+            adt.Dispose();
             return ds;
         }
 
