@@ -16,10 +16,11 @@ namespace Elections
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Form1 frm = new Form1();
+            StartPage frm = new StartPage();
             frm.Show();
 
             Application.Run();
+           
         }
     }
 }
