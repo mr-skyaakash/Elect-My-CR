@@ -31,7 +31,13 @@ namespace Elections
             label9.Text = ds.Tables[0].Rows[0].ItemArray[2].ToString();
             if (label7.Text.ToString().EndsWith("Participate"))
                 button1.Enabled = true;
+            if (label7.Text.ToString().EndsWith("Ongoing"))
+                button2.Enabled = true;
             sq.close_con();
+
+
+
+
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -63,15 +69,19 @@ namespace Elections
                 DataSet ds1 = sq.data_access("select * from StudentList");
                 for(int i= 0;i<ds1.Tables[0].Rows.Count;i++)
                 {
-                    if(label1.Text.ToString().EndsWith(ds1.Tables[0].Rows[i].ItemArray[0].ToString()) && !(bool)ds1.Tables[0].Rows[i].ItemArray[1])
+                    if(label1.Text.ToString().EndsWith(ds1.Tables[0].Rows[i].ItemArray[0].ToString()))
                     {
+                        if(!(bool)ds1.Tables[0].Rows[i].ItemArray[1])
+                        {
+                            tabControl1.SelectTab(1);
+                        }
+                        else
+                        {
+                            MessageBox.Show("You have already Participated !");
+                        }
                         
-                        tabControl1.SelectTab(1);
                     }
-                    else
-                    {
-                        MessageBox.Show("You have already Registered !");
-                    }
+                    
                 }
                 
             }
@@ -122,6 +132,41 @@ namespace Elections
             if (label7.Text.ToString().EndsWith("Participate"))
                 button1.Enabled = true;
             sq.close_con();
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            tabControl1.SelectTab(0);
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            SqlCon sq = new SqlCon();
+            sq.open_con();
+            DataSet ds = sq.data_access("select * from StudentList");
+            for(int i = 0;i< ds.Tables[0].Rows.Count;i++)
+            {
+                if (usrname.Equals(ds.Tables[0].Rows[i].ItemArray[0]))
+                {
+                    if(ds.Tables[0].Rows[i].ItemArray[1].ToString().Equals("False"))
+                    {
+                         if(ds.Tables[0].Rows[i].ItemArray[2].ToString().Equals("False"))
+                        {
+                            tabControl1.SelectTab(2);
+                        }
+                         else
+                        {
+                            MessageBox.Show("You have already Voted !");
+                        }
+                    }
+
+                    else
+                    {
+                        MessageBox.Show("You cannot Vote since you have Participated!");
+                    }
+                }
+            }
+            
         }
     }
 }
