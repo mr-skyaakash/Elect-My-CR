@@ -32,7 +32,8 @@ namespace Elections
             DataSet ds = sq.data_access("select * from LoginCred");
             int f = 0;
             String name = "";
-            for (int i = 0; i <= ds.Tables[0].Rows.Count - 1; i++)
+            int i;
+            for (i = 0; i <= ds.Tables[0].Rows.Count - 1; i++)
             {
                 if (textBox1.Text.Equals(ds.Tables[0].Rows[i].ItemArray[0]) && textBox2.Text.Equals(ds.Tables[0].Rows[i].ItemArray[1]))
                 {
@@ -45,8 +46,21 @@ namespace Elections
             if(f==1)
             {
                 this.Close();
-                Homepage_Student frm = new Elections.Homepage_Student(name);
-                frm.Show();
+
+                if(ds.Tables[0].Rows[i].ItemArray[3].ToString().Equals("True"))
+                {
+                    Admin ad = new Admin(name);
+                    ad.Show();
+                }
+
+                else
+                {
+                    Homepage_Student frm = new Elections.Homepage_Student(name);
+                    frm.Show();
+                }
+
+
+                
             }
             else
             {

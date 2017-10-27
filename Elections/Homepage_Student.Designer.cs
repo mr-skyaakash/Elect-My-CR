@@ -31,6 +31,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.label14 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
@@ -53,15 +54,23 @@
             this.button4 = new System.Windows.Forms.Button();
             this.label10 = new System.Windows.Forms.Label();
             this.tabPage3 = new System.Windows.Forms.TabPage();
-            this.label6 = new System.Windows.Forms.Label();
-            this.checkedListBox1 = new System.Windows.Forms.CheckedListBox();
             this.button5 = new System.Windows.Forms.Button();
             this.button6 = new System.Windows.Forms.Button();
+            this.checkedListBox1 = new System.Windows.Forms.CheckedListBox();
             this.tabPage4 = new System.Windows.Forms.TabPage();
+            this.label13 = new System.Windows.Forms.Label();
+            this.textBox10 = new System.Windows.Forms.TextBox();
+            this.textBox9 = new System.Windows.Forms.TextBox();
+            this.label12 = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
+            this.button8 = new System.Windows.Forms.Button();
+            this.button7 = new System.Windows.Forms.Button();
+            this.label6 = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
             this.tabPage3.SuspendLayout();
+            this.tabPage4.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
@@ -87,7 +96,7 @@
             this.tabControl1.Controls.Add(this.tabPage4);
             this.tabControl1.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.tabControl1.Font = new System.Drawing.Font("Rockwell", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tabControl1.ItemSize = new System.Drawing.Size(110, 20);
+            this.tabControl1.ItemSize = new System.Drawing.Size(0, 1);
             this.tabControl1.Location = new System.Drawing.Point(0, 35);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
@@ -98,6 +107,7 @@
             // tabPage1
             // 
             this.tabPage1.BackColor = System.Drawing.SystemColors.Menu;
+            this.tabPage1.Controls.Add(this.label14);
             this.tabPage1.Controls.Add(this.label9);
             this.tabPage1.Controls.Add(this.label8);
             this.tabPage1.Controls.Add(this.label7);
@@ -107,12 +117,20 @@
             this.tabPage1.Controls.Add(this.label4);
             this.tabPage1.Controls.Add(this.label3);
             this.tabPage1.Controls.Add(this.label2);
-            this.tabPage1.Location = new System.Drawing.Point(4, 24);
+            this.tabPage1.Location = new System.Drawing.Point(4, 5);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(358, 264);
+            this.tabPage1.Size = new System.Drawing.Size(358, 283);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "General";
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Location = new System.Drawing.Point(97, 232);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(0, 16);
+            this.label14.TabIndex = 9;
             // 
             // label9
             // 
@@ -339,27 +357,8 @@
             this.tabPage3.Size = new System.Drawing.Size(358, 264);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "Voting";
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Rockwell", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(308, 9);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(46, 14);
-            this.label6.TabIndex = 6;
-            this.label6.Text = "Logout";
-            this.label6.Click += new System.EventHandler(this.label6_Click);
-            // 
-            // checkedListBox1
-            // 
-            this.checkedListBox1.BackColor = System.Drawing.SystemColors.Menu;
-            this.checkedListBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.checkedListBox1.FormattingEnabled = true;
-            this.checkedListBox1.Location = new System.Drawing.Point(117, 44);
-            this.checkedListBox1.Name = "checkedListBox1";
-            this.checkedListBox1.Size = new System.Drawing.Size(120, 162);
-            this.checkedListBox1.TabIndex = 0;
+            this.tabPage3.Click += new System.EventHandler(this.tabPage3_Click);
+            this.tabPage3.Enter += new System.EventHandler(this.tabPage3_Enter);
             // 
             // button5
             // 
@@ -377,11 +376,29 @@
             this.button6.Name = "button6";
             this.button6.Size = new System.Drawing.Size(87, 23);
             this.button6.TabIndex = 12;
-            this.button6.Text = "Vote";
+            this.button6.Text = "View Profile";
             this.button6.UseVisualStyleBackColor = true;
+            this.button6.Click += new System.EventHandler(this.button6_Click);
+            // 
+            // checkedListBox1
+            // 
+            this.checkedListBox1.BackColor = System.Drawing.SystemColors.Menu;
+            this.checkedListBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.checkedListBox1.FormattingEnabled = true;
+            this.checkedListBox1.Location = new System.Drawing.Point(117, 44);
+            this.checkedListBox1.Name = "checkedListBox1";
+            this.checkedListBox1.Size = new System.Drawing.Size(120, 162);
+            this.checkedListBox1.TabIndex = 0;
             // 
             // tabPage4
             // 
+            this.tabPage4.Controls.Add(this.label13);
+            this.tabPage4.Controls.Add(this.textBox10);
+            this.tabPage4.Controls.Add(this.textBox9);
+            this.tabPage4.Controls.Add(this.label12);
+            this.tabPage4.Controls.Add(this.label11);
+            this.tabPage4.Controls.Add(this.button8);
+            this.tabPage4.Controls.Add(this.button7);
             this.tabPage4.Location = new System.Drawing.Point(4, 24);
             this.tabPage4.Name = "tabPage4";
             this.tabPage4.Padding = new System.Windows.Forms.Padding(3);
@@ -389,6 +406,83 @@
             this.tabPage4.TabIndex = 3;
             this.tabPage4.Text = "Profile";
             this.tabPage4.UseVisualStyleBackColor = true;
+            this.tabPage4.Click += new System.EventHandler(this.tabPage4_Click);
+            this.tabPage4.Enter += new System.EventHandler(this.tabPage4_Enter);
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Location = new System.Drawing.Point(50, 115);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(0, 16);
+            this.label13.TabIndex = 6;
+            // 
+            // textBox10
+            // 
+            this.textBox10.Location = new System.Drawing.Point(8, 136);
+            this.textBox10.Multiline = true;
+            this.textBox10.Name = "textBox10";
+            this.textBox10.ReadOnly = true;
+            this.textBox10.Size = new System.Drawing.Size(344, 54);
+            this.textBox10.TabIndex = 5;
+            // 
+            // textBox9
+            // 
+            this.textBox9.Location = new System.Drawing.Point(8, 58);
+            this.textBox9.Multiline = true;
+            this.textBox9.Name = "textBox9";
+            this.textBox9.ReadOnly = true;
+            this.textBox9.Size = new System.Drawing.Size(344, 54);
+            this.textBox9.TabIndex = 4;
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Location = new System.Drawing.Point(50, 39);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(0, 16);
+            this.label12.TabIndex = 3;
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("Rockwell", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.Location = new System.Drawing.Point(140, 3);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(80, 25);
+            this.label11.TabIndex = 2;
+            this.label11.Text = "Profile";
+            // 
+            // button8
+            // 
+            this.button8.Location = new System.Drawing.Point(30, 233);
+            this.button8.Name = "button8";
+            this.button8.Size = new System.Drawing.Size(75, 23);
+            this.button8.TabIndex = 1;
+            this.button8.Text = "Back";
+            this.button8.UseVisualStyleBackColor = true;
+            this.button8.Click += new System.EventHandler(this.button8_Click);
+            // 
+            // button7
+            // 
+            this.button7.Location = new System.Drawing.Point(249, 233);
+            this.button7.Name = "button7";
+            this.button7.Size = new System.Drawing.Size(75, 23);
+            this.button7.TabIndex = 0;
+            this.button7.Text = "Vote";
+            this.button7.UseVisualStyleBackColor = true;
+            this.button7.Click += new System.EventHandler(this.button7_Click);
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Rockwell", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(308, 9);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(46, 14);
+            this.label6.TabIndex = 6;
+            this.label6.Text = "Logout";
+            this.label6.Click += new System.EventHandler(this.label6_Click);
             // 
             // Homepage_Student
             // 
@@ -398,6 +492,7 @@
             this.Controls.Add(this.label6);
             this.Controls.Add(this.tabControl1);
             this.Controls.Add(this.label1);
+            this.Font = new System.Drawing.Font("Rockwell", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Name = "Homepage_Student";
             this.Text = "Form2";
             this.Load += new System.EventHandler(this.Form2_Load);
@@ -407,6 +502,8 @@
             this.tabPage2.ResumeLayout(false);
             this.tabPage2.PerformLayout();
             this.tabPage3.ResumeLayout(false);
+            this.tabPage4.ResumeLayout(false);
+            this.tabPage4.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -444,5 +541,13 @@
         private System.Windows.Forms.Button button6;
         private System.Windows.Forms.CheckedListBox checkedListBox1;
         private System.Windows.Forms.TabPage tabPage4;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Button button8;
+        private System.Windows.Forms.Button button7;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.TextBox textBox10;
+        private System.Windows.Forms.TextBox textBox9;
+        private System.Windows.Forms.Label label14;
     }
 }
